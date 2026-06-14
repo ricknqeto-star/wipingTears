@@ -34,8 +34,9 @@ function showSlide(i) {
   } else {
     index = i;
   }
-  slider.style.transform = `translateX(-${index * 100}vw)`;
+  slider.style.transform = `translateX(-${index * 100}%)`;
 }
+
 
 prevBtn.addEventListener('click', () => showSlide(index - 1));
 nextBtn.addEventListener('click', () => showSlide(index + 1));

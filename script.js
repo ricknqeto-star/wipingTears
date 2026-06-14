@@ -16,32 +16,28 @@ document.querySelectorAll('#nav-links a').forEach(link => {
   });
 });
 
-// Image Slider
-const slider = document.querySelector('#impact-slider .slider');
-const slides = document.querySelectorAll('#impact-slider .slider img');
-const prevBtn = document.querySelector('#impact-slider .prev');
-const nextBtn = document.querySelector('#impact-slider .next');
-let index = 0;
 
-// Dynamically set slider width
-slider.style.width = `${slides.length * 100}vw`;
 
-function showSlide(i) {
-  if (i < 0) {
-    index = slides.length - 1;
-  } else if (i >= slides.length) {
-    index = 0;
-  } else {
-    index = i;
+// Modal logic
+const thumbs = document.querySelectorAll('.thumb');
+const modal = document.getElementById('imageModal');
+const closeBtn = document.querySelector('#imageModal .close');
+
+thumbs.forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    modal.style.display = 'block'; // show modal
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none'; // hide modal
+});
+
+// Close modal when clicking outside content
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
   }
-  slider.style.transform = `translateX(-${index * 100}%)`;
-}
-
-
-prevBtn.addEventListener('click', () => showSlide(index - 1));
-nextBtn.addEventListener('click', () => showSlide(index + 1));
-
-// Auto-slide every 5 seconds
-setInterval(() => showSlide(index + 1), 5000);
+});
 
 

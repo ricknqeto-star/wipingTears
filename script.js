@@ -5,28 +5,20 @@ const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
 menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
+  navLinks.classList.toggle('show'); // toggle open/close
 });
 
+// Close nav when clicking a link
 document.querySelectorAll('#nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('show');
   });
 });
 
-// =======================
-// Modal Logic
-// =======================
-const modal = document.getElementById('imageModal');
-const closeBtn = document.querySelector('#imageModal .close');
-
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
+// Optional: close nav if clicking outside
 window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
+  if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && e.target !== menuToggle) {
+    navLinks.classList.remove('show');
   }
 });
 

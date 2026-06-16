@@ -231,3 +231,36 @@ footer .bottom-bar {
   background: #c72d3a;       /* darker red on hover */
   transform: scale(1.05);    /* subtle hover effect */
 }
+/* Floating Admin Login Button */
+.floating-login {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #e63946;       /* brand red */
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10000;
+}
+.floating-login:hover {
+  background: #c72d3a;
+  transform: scale(1.05);
+}
+
+/* Smaller on mobile */
+@media (max-width:768px){
+  .floating-login {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+@media (max-width:480px){
+  .floating-login {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+}

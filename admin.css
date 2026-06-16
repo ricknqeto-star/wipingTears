@@ -1,0 +1,94 @@
+/* General Layout */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Section Styling */
+section {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Headings */
+h2 {
+  color: #e63946;
+  margin-bottom: 20px;
+}
+h3 {
+  color: #876b6d;
+  margin-bottom: 15px;
+}
+
+/* Forms */
+form {
+  margin-bottom: 20px;
+}
+input, textarea, button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+textarea {
+  min-height: 80px;
+}
+button {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background: #c72d3a;
+}
+
+/* Admin Section Wrapper */
+.admin-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+/* Image Lists */
+#thumbList, #galleryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+#thumbList div, #galleryList div {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  flex: 1 1 120px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    padding: 20px;
+  }
+  input, textarea, button {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+  #thumbList, #galleryList {
+    flex-direction: column;
+  }
+}

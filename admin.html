@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <!-- Login Section -->
+  <section id="login">
+    <h2>Admin Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <!-- NEW Back to Site link -->
+    <a href="index.html" class="back-link">← Back to Site</a>
+  </section>
+
+  <!-- Dashboard Section -->
+  <section id="dashboard" style="display:none;">
+    <h2>Admin Dashboard</h2>
+
+    <!-- About Section Editor -->
+    <div class="admin-section">
+      <h3>About Section Editor</h3>
+      <form id="aboutForm">
+        <label>Edit About Content:</label>
+        <textarea id="aboutText"></textarea>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+
+    <!-- Thumbnails Section -->
+    <div class="admin-section">
+      <h3>Main Page Thumbnails (2 max)</h3>
+      <form id="thumbForm">
+        <label>Upload Thumbnails:</label>
+        <input type="file" id="thumbUpload" multiple>
+        <button type="submit">Update Thumbnails</button>
+      </form>
+      <div id="thumbList"></div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="admin-section">
+      <h3>Modal Gallery Images</h3>
+      <form id="galleryForm">
+        <label>Upload Gallery Image:</label>
+        <input type="file" id="galleryUpload">
+        <button type="submit">Add to Gallery</button>
+      </form>
+      <div id="galleryList"></div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="admin-section">
+      <h3>Footer Editor</h3>
+      <form id="footerForm">
+        <label>Edit Footer Text:</label>
+        <textarea id="footerText"></textarea>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+
+    <!-- Logout -->
+    <button id="logoutBtn">Logout</button>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>

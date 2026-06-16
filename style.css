@@ -215,52 +215,129 @@ footer .bottom-bar {
   display: block;
   text-align: center;     /* keeps icon centered above heading */
 }
-/* Get Involved Section Buttons */
-#get-involved .involved-card a {
+/* Programs Section Cards */
+.programs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;                 /* spacing between cards */
+  justify-content: center;
+  align-items: stretch;      /* equal height alignment */
+}
+
+.program-card {
+  flex: 1 1 300px;           /* minimum width */
+  max-width: 350px;          /* cap width */
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card h3 {
+  margin-top: 15px;
+  color: #e63946;
+  font-size: 1.4em;
+}
+
+.program-card p {
+  margin-top: 10px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+
+/* Get Involved Section */
+#get-involved {
+  background: #f4f4f4;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+#get-involved h2 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #e63946;
+}
+
+.involved-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.involved-card {
+  flex: 1 1 320px;           /* bigger minimum size */
+  max-width: 400px;          /* cap width */
+  background: #fff;
+  padding: 35px;             /* more padding for larger feel */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.involved-card:hover {
+  transform: translateY(-8px);
+}
+
+.involved-card h3 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  color: #e63946;
+}
+
+.involved-card p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.involved-card a {
   display: inline-block;
-  background: #e63946;       /* brand red */
+  background: #e63946;
   color: #fff;
-  padding: 12px 25px;        /* consistent padding with hero button */
-  border-radius: 5px;
+  padding: 14px 28px;        /* larger button */
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-#get-involved .involved-card a:hover {
-  background: #c72d3a;       /* darker red on hover */
-  transform: scale(1.05);    /* subtle hover effect */
-}
-/* Floating Admin Login Button */
-.floating-login {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #e63946;       /* brand red */
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: background 0.3s ease, transform 0.3s ease;
-  z-index: 10000;
-}
-.floating-login:hover {
+.involved-card a:hover {
   background: #c72d3a;
   transform: scale(1.05);
 }
 
-/* Smaller on mobile */
-@media (max-width:768px){
-  .floating-login {
-    padding: 8px 16px;
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .involved-card {
+    flex: 1 1 100%;
+    max-width: 90%;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .involved-card {
+    padding: 20px;
+  }
+  .involved-card h3 {
+    font-size: 1.3em;
+  }
+  .involved-card p {
+    font-size: 1em;
+  }
+  .involved-card a {
+    padding: 12px 22px;
     font-size: 0.9em;
   }
 }
-@media (max-width:480px){
-  .floating-login {
-    padding: 6px 12px;
-    font-size: 0.8em;
-  }
-}
+

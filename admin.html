@@ -15,57 +15,146 @@
       <input type="password" id="password" placeholder="Password" required>
       <button type="submit">Login</button>
     </form>
-    <!-- NEW Back to Site link -->
     <a href="index.html" class="back-link">← Back to Site</a>
   </section>
 
   <!-- Dashboard Section -->
   <section id="dashboard" style="display:none;">
-    <h2>Admin Dashboard</h2>
+    <aside class="sidebar">
+      <h3>Admin Menu</h3>
+      <ul>
+        <li><a href="#" data-section="header">Header</a></li>
+        <li><a href="#" data-section="hero">Hero Section</a></li>
+        <li><a href="#" data-section="about">About</a></li>
+        <li><a href="#" data-section="programs">Programs</a></li>
+        <li><a href="#" data-section="impact">Impact</a></li>
+        <li><a href="#" data-section="gallery">Gallery</a></li>
+        <li><a href="#" data-section="thumbnails">Thumbnails</a></li>
+        <li><a href="#" data-section="getinvolved">Get Involved</a></li>
+        <li><a href="#" data-section="footer">Footer</a></li>
+      </ul>
+    </aside>
 
-    <!-- About Section Editor -->
-    <div class="admin-section">
-      <h3>About Section Editor</h3>
-      <form id="aboutForm">
-        <label>Edit About Content:</label>
-        <textarea id="aboutText"></textarea>
-        <button type="submit">Save</button>
-      </form>
-    </div>
+    <main class="admin-content">
+      <!-- Header -->
+      <div id="editor-header" class="editor-section" style="display:none;">
+        <h2>Edit Header</h2>
+        <form id="headerForm">
+          <label>Site Name (H1):</label>
+          <input type="text" id="headerText">
+          <button type="submit">Save</button>
+        </form>
+      </div>
 
-    <!-- Thumbnails Section -->
-    <div class="admin-section">
-      <h3>Main Page Thumbnails (2 max)</h3>
-      <form id="thumbForm">
-        <label>Upload Thumbnails:</label>
-        <input type="file" id="thumbUpload" multiple>
-        <button type="submit">Update Thumbnails</button>
-      </form>
-      <div id="thumbList"></div>
-    </div>
+      <!-- Hero -->
+      <div id="editor-hero" class="editor-section" style="display:none;">
+        <h2>Edit Hero Section</h2>
+        <form id="heroForm">
+          <label>Heading (H2):</label>
+          <input type="text" id="heroHeading">
+          <label>Slogan (P):</label>
+          <input type="text" id="heroSlogan">
+          <button type="submit">Save</button>
+        </form>
+      </div>
 
-    <!-- Gallery Section -->
-    <div class="admin-section">
-      <h3>Modal Gallery Images</h3>
-      <form id="galleryForm">
-        <label>Upload Gallery Image:</label>
-        <input type="file" id="galleryUpload">
-        <button type="submit">Add to Gallery</button>
-      </form>
-      <div id="galleryList"></div>
-    </div>
+      <!-- About -->
+      <div id="editor-about" class="editor-section" style="display:none;">
+        <h2>Edit About Section</h2>
+        <form id="aboutForm">
+          <label>Description (P):</label>
+          <textarea id="aboutDescription"></textarea>
+          <label>Mission Statement (P):</label>
+          <textarea id="aboutMission"></textarea>
+          <button type="submit">Save</button>
+        </form>
+      </div>
 
-    <!-- Footer Section -->
-    <div class="admin-section">
-      <h3>Footer Editor</h3>
-      <form id="footerForm">
-        <label>Edit Footer Text:</label>
-        <textarea id="footerText"></textarea>
-        <button type="submit">Save</button>
-      </form>
-    </div>
+      <!-- Programs -->
+      <div id="editor-programs" class="editor-section" style="display:none;">
+        <h2>Edit Programs</h2>
+        <form id="programForm">
+          <label>Program Title (H3):</label>
+          <input type="text" id="programTitle">
+          <label>Program Description (P):</label>
+          <textarea id="programDesc"></textarea>
+          <button type="submit">Add Program</button>
+        </form>
+        <div id="programList"></div>
+      </div>
 
-    <!-- Logout -->
+      <!-- Impact -->
+      <div id="editor-impact" class="editor-section" style="display:none;">
+        <h2>Edit Impact</h2>
+        <form id="impactForm">
+          <label>Impact Number (H3):</label>
+          <input type="text" id="impactNumber">
+          <label>Impact Type (P):</label>
+          <input type="text" id="impactType">
+          <button type="submit">Add Impact</button>
+        </form>
+        <div id="impactList"></div>
+      </div>
+
+      <!-- Gallery -->
+
+      <div id="editor-gallery" class="editor-section" style="display:none;">
+        <h2>Edit Gallery</h2>
+        <form id="galleryForm">
+          <label>Upload Image:</label>
+          <input type="file" id="galleryUpload">
+          <button type="submit">Add</button>
+        </form>
+        <div id="galleryList"></div>
+      </div>
+
+      <!-- Thumbnail Section Editor -->
+<div id="editor-thumbnails" class="editor-section" style="display:none;">
+  <h2>Edit Homepage Thumbnails</h2>
+  <form id="thumbForm">
+    <label>Upload Thumbnail Image (Max 2):</label>
+    <input type="file" id="thumbUpload" multiple>
+    <button type="submit">Add Thumbnail</button>
+  </form>
+  <div id="thumbList"></div>
+</div>
+
+
+      <!-- Get Involved -->
+      <div id="editor-getinvolved" class="editor-section" style="display:none;">
+        <h2>Edit Get Involved</h2>
+        <form id="getInvolvedForm">
+          <label>Donation Description (P):</label>
+          <textarea id="donationDesc"></textarea>
+          <label>Volunteer Description (P):</label>
+          <textarea id="volunteerDesc"></textarea>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <div id="editor-footer" class="editor-section" style="display:none;">
+        <h2>Edit Footer</h2>
+        <form id="footerForm">
+          <label>NGO Description (P):</label>
+          <textarea id="footerDesc"></textarea>
+          <label>Email:</label>
+          <input type="email" id="footerEmail">
+          <label>Phone:</label>
+          <input type="text" id="footerPhone">
+          <label>City & Country:</label>
+          <input type="text" id="footerLocation">
+          <label>Facebook:</label>
+          <input type="url" id="footerFacebook">
+          <label>Instagram:</label>
+          <input type="url" id="footerInstagram">
+          <label>LinkedIn:</label>
+          <input type="url" id="footerLinkedin">
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </main>
+
     <button id="logoutBtn">Logout</button>
   </section>
 
